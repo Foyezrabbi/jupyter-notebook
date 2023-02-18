@@ -10,4 +10,8 @@ except Exception:
     except Exception as e:
         print(e)
         pip(['install', 'jupyter'])
-    open_jupyter_notebook = subprocess.Popen('jupyter notebook')
+    try:
+
+        open_jupyter_notebook = subprocess.Popen('jupyter notebook')
+    except Exception:
+        open_jupyter_notebook = subprocess.Popen('python -m notebook')
